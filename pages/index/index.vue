@@ -1,28 +1,13 @@
 <template>
-	<view>
-		<view v-for="(item,index) in lists" v-bind:key=index>
-			<text>{{item}}</text>
-		</view>
+	<view class="root_view">
+		<scroll-view scroll-y="true" style="height: 100%;">
+			<view class="view_list" v-for="(item,index) in demos" v-bind:key=index @click="goDetail(index)">
+				<text>
+					{{item}}
+				</text>
+			</view>
 
-		<view v-for="(item,i) in show" v-bind:key=i>
-			<text>
-				{{item.name}}--{{item.age}}
-			</text>
-		</view>
-
-		<text @click="showMessage">
-			测试点击
-		</text>
-		<view>
-			<text @click="goToOtherPage">
-				点击跳转
-			</text>
-		</view>
-		<view>
-			<text @click="goToNetwork">
-				基本网络请求
-			</text>
-		</view>
+		</scroll-view>
 	</view>
 </template>
 
@@ -48,6 +33,13 @@
 						name: '龙少',
 						age: 45
 					}
+				],
+				demos: [
+					'1、页面跳转功能',
+					'2、各种button',
+					'3、input的使用',
+					'4、网络请求以及列表实现',
+					'5、下拉框的使用'
 				]
 			}
 		},
@@ -66,7 +58,7 @@
 				});
 			}, 3000);
 			console.log(e.user),
-			console.log(e.age)
+				console.log(e.age)
 			var temp;
 		},
 		methods: {
@@ -76,15 +68,34 @@
 					duration: 1000
 				})
 			},
-			goToOtherPage() {
-				uni.navigateTo({
-					url: '../test/test?user=awei&age=18'
-				})
-			},
-			goToNetwork(){
-				uni.navigateTo({
-					url:'../network/network'
-				})
+			goDetail(index) {
+				switch (index) {
+					case 0:
+						uni.navigateTo({
+							url: '../test/test?user=awei&age=18'
+						})
+						break;
+					case 1:
+						uni.navigateTo({
+							url: '../button/button'
+						})
+						break;
+					case 2:
+						uni.navigateTo({
+							url: '../input/input'
+						})
+						break;
+					case 3:
+						uni.navigateTo({
+							url: '../network/network'
+						})
+						break;
+					case 4:
+					uni.navigateTo({
+						url:'../selecter/selecter'
+					})
+					break
+				}
 			}
 		}
 	}
@@ -105,5 +116,18 @@
 	.temp {
 		width: 100%;
 		height: auto;
+	}
+	.view_list {
+		text-align: center;
+		background-color: #FFFFFF;
+		margin-top:25rpx;
+		margin-bottom: 25rpx;
+		margin-left: 36rpx;
+		margin-right: 36rpx;
+		
+		padding-top: 18rpx;
+		padding-bottom: 18rpx;
+		padding-left: 36rpx;
+		padding-right: 36rpx;
 	}
 </style>

@@ -4,32 +4,38 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
-				"navigationBarBackgroundColor":"#DD524D"
+				"navigationBarBackgroundColor": "#DD524D"
 			}
 		},
 		{
 			"path": "pages/index/me",
 			"style": {
 				"navigationBarTitleText": "我",
-				"navigationBarBackgroundColor":"#007AFF"
+				"navigationBarBackgroundColor": "#007AFF"
 			}
+		}, {
+			"path": "pages/test/test",
+			"style": {}
+		}, {
+			"path": "pages/third/third",
+			"style": {}
+		}, {
+			"path": "pages/button/button",
+			"style": {}
+		}, {
+			"path": "pages/input/input",
+			"style": {}
+		}, {
+			"path": "pages/network/network",
+			"style": {}
+		},{
+			"path": "pages/selecter/selecter",
+			"style": {}
 		}
-	    ,{
-            "path" : "pages/test/test",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/third/third",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/network/network",
-            "style" : {}
-        }
-    ],
+	],
 	//底部导航栏
 	"tabBar": {
-		"spacing":"6px",
+		"spacing": "6px",
 		"color": "#cdcdcd",
 		"selectedColor": "#39cffc",
 		"borderStyle": "black",
